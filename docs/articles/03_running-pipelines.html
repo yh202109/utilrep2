@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">utilrep2</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
       </span>
     </div>
 
@@ -49,7 +49,19 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/getting-started.html">Getting Started with utilrep2</a>
+      <a href="../articles/00_windows-renv-restore.html">Windows Setup: Restoring from renv.lock.win</a>
+    </li>
+    <li>
+      <a href="../articles/01_getting-started.html">Getting Started with utilrep2</a>
+    </li>
+    <li>
+      <a href="../articles/02_os-compatibility.html">OS Compatibility Audit</a>
+    </li>
+    <li>
+      <a href="../articles/03_running-pipelines.html">Running Analysis Pipelines</a>
+    </li>
+    <li>
+      <a href="../articles/05_report-index.html">Report Index</a>
     </li>
     <li>
       <a href="../articles/module-cop-binaryprinstrat.html">Module: cop_binaryprinstrat</a>
@@ -76,6 +88,9 @@
       <a href="../articles/module-cor-nonlinear.html">Module: cor_nonlinear</a>
     </li>
     <li>
+      <a href="../articles/module-cor-npthreshold.html">Module: cor_npthreshold</a>
+    </li>
+    <li>
       <a href="../articles/module-cor-poisson.html">Module: cor_poisson</a>
     </li>
     <li>
@@ -88,16 +103,13 @@
       <a href="../articles/module-cor-threshold.html">Module: cor_threshold</a>
     </li>
     <li>
+      <a href="../articles/module-immuno-cumulative-incidence.html">Module: cumulative_incidence</a>
+    </li>
+    <li>
       <a href="../articles/module-immuno-graphical.html">Module: immuno_graphical</a>
     </li>
     <li>
       <a href="../articles/module-immuno-tabular.html">Module: immuno_tabular</a>
-    </li>
-    <li>
-      <a href="../articles/os-compatibility.html">OS Compatibility Audit</a>
-    </li>
-    <li>
-      <a href="../articles/running-pipelines.html">Running Analysis Pipelines</a>
     </li>
   </ul>
 </li>
@@ -119,7 +131,7 @@
             
       
 
-      <div class="hidden name"><code>running-pipelines.Rmd</code></div>
+      <div class="hidden name"><code>03_running-pipelines.Rmd</code></div>
 
     </div>
 
@@ -176,11 +188,29 @@ set</strong> before any <code>run_*()</code> function will execute. Call
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">utilrep2</span><span class="op">)</span></span>
 <span></span>
+<span><span class="co"># Linux / macOS</span></span>
 <span><span class="fu"><a href="../reference/setup_session.html">setup_session</a></span><span class="op">(</span></span>
 <span>  platform    <span class="op">=</span> <span class="st">"linux"</span>,</span>
 <span>  data_path   <span class="op">=</span> <span class="st">"/data/projects/correlates_reporting2/data_clean"</span>,</span>
 <span>  trial       <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span>
 <span>  report_root <span class="op">=</span> <span class="st">"/data/projects/correlates_reporting2"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Windows — win/ scripts co-located with the project (default)</span></span>
+<span><span class="fu"><a href="../reference/setup_session.html">setup_session</a></span><span class="op">(</span></span>
+<span>  platform    <span class="op">=</span> <span class="st">"win"</span>,</span>
+<span>  data_path   <span class="op">=</span> <span class="st">"C:/projects/correlates_reporting2/data_clean"</span>,</span>
+<span>  trial       <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span>
+<span>  report_root <span class="op">=</span> <span class="st">"C:/projects/correlates_reporting2"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Windows — win/ scripts on a separate drive or network share</span></span>
+<span><span class="fu"><a href="../reference/setup_session.html">setup_session</a></span><span class="op">(</span></span>
+<span>  platform    <span class="op">=</span> <span class="st">"win"</span>,</span>
+<span>  data_path   <span class="op">=</span> <span class="st">"C:/projects/correlates_reporting2/data_clean"</span>,</span>
+<span>  trial       <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span>
+<span>  report_root <span class="op">=</span> <span class="st">"C:/projects/correlates_reporting2"</span>,</span>
+<span>  win_root    <span class="op">=</span> <span class="st">"D:/win_scripts"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>To use the mock data from the project’s <code>data_clean/</code>
 folder:</p>
@@ -191,7 +221,7 @@ folder:</p>
 <span>  trial       <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span>
 <span>  report_root <span class="op">=</span> <span class="st">"/path/to/correlates_reporting2"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p>See <code><a href="../articles/getting-started.html">vignette("getting-started", package = "utilrep2")</a></code>
+<p>See <code>vignette("getting-started", package = "utilrep2")</code>
 for full details on each setting and <code><a href="../reference/session_status.html">session_status()</a></code> to
 verify the current configuration.</p>
 <hr>
@@ -512,9 +542,14 @@ the module root:</p>
 argument it changed, so you can restore them afterwards. Note that
 <code>platform</code> and <code>data_path</code> must already be set
 from an earlier call — the snippet below only overrides
-<code>trial</code> and <code>platform</code>:</p>
+<code>trial</code>, <code>platform</code>, and
+<code>win_root</code>:</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">old</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/setup_session.html">setup_session</a></span><span class="op">(</span>trial <span class="op">=</span> <span class="st">"janssen_pooled_partA"</span>, platform <span class="op">=</span> <span class="st">"win"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">old</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/setup_session.html">setup_session</a></span><span class="op">(</span></span>
+<span>  trial    <span class="op">=</span> <span class="st">"janssen_pooled_partA"</span>,</span>
+<span>  platform <span class="op">=</span> <span class="st">"win"</span>,</span>
+<span>  win_root <span class="op">=</span> <span class="st">"D:/win_scripts"</span>     <span class="co"># optional: override win/ location</span></span>
+<span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/on.exit.html" class="external-link">on.exit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/do.call.html" class="external-link">do.call</a></span><span class="op">(</span><span class="va">setup_session</span>, <span class="va">old</span><span class="op">)</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/run_cor_analysis.html">run_cor_analysis</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>

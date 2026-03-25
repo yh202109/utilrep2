@@ -2,20 +2,25 @@ pandoc: 3.6.3
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
-  getting-started: getting-started.html
+  00_windows-renv-restore: 00_windows-renv-restore.html
+  01_getting-started: 01_getting-started.html
+  02_os-compatibility: 02_os-compatibility.html
+  03_running-pipelines: 03_running-pipelines.html
+  05_report-index: 05_report-index.html
   module-cop-binaryprinstrat: module-cop-binaryprinstrat.html
+  module-cop-contrisk: module-cop-contrisk.html
   module-cop-mediation: module-cop-mediation.html
   module-cop-stochastic: module-cop-stochastic.html
   module-cor-coxph: module-cor-coxph.html
   module-cor-graphical: module-cor-graphical.html
   module-cor-logistic: module-cor-logistic.html
   module-cor-nonlinear: module-cor-nonlinear.html
+  module-cor-npthreshold: module-cor-npthreshold.html
   module-cor-poisson: module-cor-poisson.html
   module-cor-surrogates: module-cor-surrogates.html
   module-cor-tabular: module-cor-tabular.html
   module-cor-threshold: module-cor-threshold.html
+  module-immuno-cumulative-incidence: module-immuno-cumulative-incidence.html
   module-immuno-graphical: module-immuno-graphical.html
   module-immuno-tabular: module-immuno-tabular.html
-  os-compatibility: os-compatibility.html
-  running-pipelines: running-pipelines.html
-last_built: 2026-03-14T23:38Z
+last_built: 2026-03-25T12:09Z

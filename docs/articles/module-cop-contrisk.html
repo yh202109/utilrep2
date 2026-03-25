@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module: cor_surrogates • utilrep2</title>
+<title>Module: cop_contrisk • utilrep2</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Module: cor_surrogates">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Module: cop_contrisk">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -127,11 +127,11 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Module: cor_surrogates</h1>
+      <h1 data-toc-skip>Module: cop_contrisk</h1>
             
       
 
-      <div class="hidden name"><code>module-cor-surrogates.Rmd</code></div>
+      <div class="hidden name"><code>module-cop-contrisk.Rmd</code></div>
 
     </div>
 
@@ -140,26 +140,39 @@
 <div class="section level2">
 <h2 id="purpose">Purpose<a class="anchor" aria-label="anchor" href="#purpose"></a>
 </h2>
-<p><code>cor_surrogates</code> identifies optimal immune correlates of
-vaccine protection using cross-validated Super Learner (CV-SL) variable
-importance (VIMP) analysis. It runs multiple varset jobs (parallelisable
-via SLURM array), computes VIMP scores, and assembles summary tables and
-figures.</p>
+<p><code>cop_contrisk</code> estimates controlled risk curves that
+describe how vaccine efficacy varies as a function of a continuous
+immune marker. For each marker it produces both Cox-model-based and
+nonparametric estimates of the covariate-adjusted cumulative incidence
+in the investigational and comparator vaccine arms, plotted against the
+weighted marker density of per-protocol participants.</p>
+<p>Unlike most modules in <code>correlates_reporting2</code>,
+<code>cop_contrisk</code> is organised as a set of
+<strong>self-contained per-trial Rmd notebooks</strong>, each located in
+a trial-specific subdirectory rather than a shared <code>code/</code>
+directory.</p>
 <p><strong>Source module:</strong>
-<code>correlates_reporting2/cor_surrogates/</code><br><strong>Key report:</strong> <code>cor_surrogates/report.Rmd</code>
-(also trial-specific sub-reports
-e.g. <code>report_sub_Moderna.Rmd</code>)</p>
+<code>correlates_reporting2/cop_contrisk/</code><br><strong>Key reports:</strong></p>
+<table class="table">
+<thead><tr class="header">
+<th>Trial subdirectory</th>
+<th>Rmd</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td><code>vaxart_mock/</code></td>
+<td><code>controlled_risk_vaxart_mock.Rmd</code></td>
+</tr></tbody>
+</table>
 <hr>
 </div>
 <div class="section level2">
-<h2 id="example-data">Example data<a class="anchor" aria-label="anchor" href="#example-data"></a>
+<h2 id="key-packages">Key packages<a class="anchor" aria-label="anchor" href="#key-packages"></a>
 </h2>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">report_root</span>  <span class="op">&lt;-</span> <span class="st">"/path/to/correlates_reporting2"</span></span>
-<span><span class="va">moderna_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span></span>
-<span>  <span class="va">report_root</span>, <span class="st">"data_clean"</span>,</span>
-<span>  <span class="st">"moderna_mock_data_processed_with_riskscore.csv"</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<p>The analysis Rmd depends on the <a href="https://cran.r-project.org/package=vaccine" class="external-link"><code>vaccine</code></a>
+package for controlled-risk estimation (<code>est_ce()</code>,
+<code>est_overall()</code>, <code>plot_ce()</code>) and on
+<code>dplyr</code>, <code>ggplot2</code>, and <code>patchwork</code> for
+data manipulation and plotting.</p>
 <hr>
 </div>
 <div class="section level2">
@@ -168,12 +181,12 @@ e.g. <code>report_sub_Moderna.Rmd</code>)</p>
 <div class="section level3">
 <h3 id="configure-the-session">1. Configure the session<a class="anchor" aria-label="anchor" href="#configure-the-session"></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">utilrep2</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">report_root</span> <span class="op">&lt;-</span> <span class="st">"/path/to/correlates_reporting2"</span></span>
 <span><span class="fu"><a href="../reference/setup_session.html">setup_session</a></span><span class="op">(</span></span>
-<span>  trial       <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span>
+<span>  trial       <span class="op">=</span> <span class="st">"nextgen_mock"</span>,</span>
 <span>  platform    <span class="op">=</span> <span class="st">"linux"</span>,</span>
 <span>  data_path   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">report_root</span>, <span class="st">"data_clean"</span><span class="op">)</span>,</span>
 <span>  report_root <span class="op">=</span> <span class="va">report_root</span></span>
@@ -182,101 +195,119 @@ e.g. <code>report_sub_Moderna.Rmd</code>)</p>
 <div class="section level3">
 <h3 id="run-the-module">2. Run the module<a class="anchor" aria-label="anchor" href="#run-the-module"></a>
 </h3>
-<p><code>cor_surrogates</code> is structured around SLURM array jobs.
-The <code>varset_number</code> argument corresponds to
-<code>SLURM_ARRAY_TASK_ID</code>. Run each varset sequentially from
-R:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Run varsets 1 through N sequentially (use parallel jobs on HPC)</span></span>
-<span><span class="va">n_varsets</span> <span class="op">&lt;-</span> <span class="fl">5L</span>  <span class="co"># adjust to the number defined for this trial</span></span>
-<span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">v</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="va">n_varsets</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/run_cor_surrogates.html">run_cor_surrogates</a></span><span class="op">(</span></span>
-<span>    trial         <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span>
-<span>    endpoint      <span class="op">=</span> <span class="st">"D57"</span>,</span>
-<span>    varset_number <span class="op">=</span> <span class="va">v</span>,</span>
-<span>    report        <span class="op">=</span> <span class="cn">FALSE</span>   <span class="co"># suppress report until all varsets done</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
-<p>After all varsets complete, render the report:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">run_cop_contrisk</span><span class="op">(</span>trial <span class="op">=</span> <span class="st">"nextgen_mock"</span><span class="op">)</span></span></code></pre></div>
+<p>This renders
+<code>cop_contrisk/vaxart_mock/controlled_risk_vaxart_mock.Rmd</code>
+and writes a date-stamped PDF to the same subdirectory, e.g.:</p>
+<pre><code><span><span class="va">cop_contrisk</span><span class="op">/</span><span class="va">vaxart_mock</span><span class="op">/</span><span class="va">controlled_risk_vaxart_mock_20260322.pdf</span></span></code></pre>
+<p>To write the PDF to a different location, pass
+<code>output_dir</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/run_cor_surrogates.html">run_cor_surrogates</a></span><span class="op">(</span></span>
-<span>  trial         <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span>
-<span>  endpoint      <span class="op">=</span> <span class="st">"D57"</span>,</span>
-<span>  varset_number <span class="op">=</span> <span class="fl">1L</span>,</span>
-<span>  report        <span class="op">=</span> <span class="cn">TRUE</span></span>
+<code class="sourceCode R"><span><span class="fu">run_cop_contrisk</span><span class="op">(</span></span>
+<span>  trial      <span class="op">=</span> <span class="st">"nextgen_mock"</span>,</span>
+<span>  output_dir <span class="op">=</span> <span class="st">"/results/contrisk/2026-03-22"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="full-sequence-of-scripts-executed-per-varset">Full sequence of scripts executed per varset<a class="anchor" aria-label="anchor" href="#full-sequence-of-scripts-executed-per-varset"></a>
-</h3>
-<ol style="list-style-type: decimal">
-<li>
-<code>run_cvsl_varsets.R</code> — fits CV-SL for one varset</li>
-<li>
-<code>get_vimp.R</code> — computes VIMP from SL objects</li>
-<li>
-<code>createRDAfiles_fromSLobjects.R</code> — serialises results to
-<code>.rda</code>
-</li>
-<li>
-<code>tables_figures.R</code> — generates summary tables and VIMP
-plots</li>
-</ol>
 <hr>
 </div>
 </div>
 <div class="section level2">
-<h2 id="output">Output<a class="anchor" aria-label="anchor" href="#output"></a>
+<h2 id="what-the-rmd-does">What the Rmd does<a class="anchor" aria-label="anchor" href="#what-the-rmd-does"></a>
 </h2>
-<p>Results are saved under
-<code>cor_surrogates/output/&lt;trial&gt;/</code>. The final report PDF
-is <code>cor_surrogates/report.pdf</code>.</p>
-<div class="section level3">
-<h3 id="report-sections">Report sections<a class="anchor" aria-label="anchor" href="#report-sections"></a>
-</h3>
-<ul>
-<li>VIMP bar charts per marker</li>
-<li>Cross-validated AUC summaries</li>
-<li>Trial-specific sub-reports (Moderna, HVTN705, Janssen, VAT08,
-COVAIL)</li>
-</ul>
+<p>The report reads the analysis-ready dataset via
+<code>config::get()</code> pointing at <code>config.yml</code> in the
+project root, then runs the following sequence for each of three marker
+contrasts:</p>
+<table class="table">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>Marker</th>
+<th>Contrast</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>Bpseudoneutid50_sera_XBB.1.5</code></td>
+<td>Baseline (D01) nAb-ID50</td>
+</tr>
+<tr class="even">
+<td><code>Day31pseudoneutid50_sera_XBB.1.5</code></td>
+<td>Post-vaccination (D31) nAb-ID50</td>
+</tr>
+<tr class="odd">
+<td><code>Delta31overBpseudoneutid50_sera_XBB.1.5</code></td>
+<td>Fold-change D31/D01 nAb-ID50</td>
+</tr>
+</tbody>
+</table>
+<p>For each marker and each method (Cox, Nonparametric):</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Subset</strong> to Phase-1 per-protocol participants
+(<code>ph1.D31_7 == 1</code>).</li>
+<li>
+<strong>Load data</strong> via <code>vaccine::load_data()</code>,
+setting Phase-2 indicator and sampling weights for the sera
+subcohort.</li>
+<li>
+<strong>Estimate overall incidence</strong> in each arm via
+<code>vaccine::est_overall()</code>.</li>
+<li>
+<strong>Estimate controlled risk</strong> via
+<code>vaccine::est_ce()</code>.</li>
+<li>
+<strong>Truncate</strong> to the middle 95% of the weighted marker
+distribution.</li>
+<li>
+<strong>Plot</strong> using <code>vaccine::plot_ce()</code> with
+overlaid arm-specific incidence lines and a kernel density ribbon.</li>
+</ol>
+<p>The helper function <code>CoR_D1()</code> (defined inside the Rmd)
+encapsulates steps 2–6 and saves an individual PDF to the
+<code>Plot/</code> subdirectory.</p>
 <hr>
 </div>
+<div class="section level2">
+<h2 id="output">Output<a class="anchor" aria-label="anchor" href="#output"></a>
+</h2>
+<table class="table">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>Location</th>
+<th>Contents</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>cop_contrisk/vaxart_mock/Plot/*.pdf</code></td>
+<td>Per-marker controlled-risk plots</td>
+</tr>
+<tr class="even">
+<td><code>cop_contrisk/vaxart_mock/controlled_risk_vaxart_mock_&lt;date&gt;.pdf</code></td>
+<td>Full assembled report</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </div>
 <div class="section level2">
 <h2 id="supported-trials">Supported trials<a class="anchor" aria-label="anchor" href="#supported-trials"></a>
 </h2>
 <table class="table">
 <thead><tr class="header">
-<th>Trial</th>
-<th>Endpoint</th>
+<th>Trial label</th>
+<th>Subdirectory</th>
+<th>Rmd</th>
 </tr></thead>
-<tbody>
-<tr class="odd">
-<td>
-<code>moderna_mock</code>, <code>moderna_real</code>
-</td>
-<td>D57</td>
-</tr>
-<tr class="even">
-<td><code>hvtn705second</code></td>
-<td>D210</td>
-</tr>
-<tr class="odd">
-<td><code>janssen_la_partA</code></td>
-<td>D29</td>
-</tr>
-<tr class="even">
-<td><code>vat08_combined</code></td>
-<td>D43</td>
-</tr>
-<tr class="odd">
-<td>
-<code>covail</code> (xassays)</td>
-<td>D15 windows</td>
-</tr>
-</tbody>
+<tbody><tr class="odd">
+<td><code>nextgen_mock</code></td>
+<td><code>vaxart_mock/</code></td>
+<td><code>controlled_risk_vaxart_mock.Rmd</code></td>
+</tr></tbody>
 </table>
 </div>
   </div>

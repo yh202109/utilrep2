@@ -1,18 +1,26 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>/404.html</loc></url>
+<url><loc>/articles/00_windows-renv-restore.html</loc></url>
+<url><loc>/articles/01_getting-started.html</loc></url>
+<url><loc>/articles/02_os-compatibility.html</loc></url>
+<url><loc>/articles/03_running-pipelines.html</loc></url>
+<url><loc>/articles/05_report-index.html</loc></url>
 <url><loc>/articles/getting-started.html</loc></url>
 <url><loc>/articles/index.html</loc></url>
 <url><loc>/articles/module-cop-binaryprinstrat.html</loc></url>
+<url><loc>/articles/module-cop-contrisk.html</loc></url>
 <url><loc>/articles/module-cop-mediation.html</loc></url>
 <url><loc>/articles/module-cop-stochastic.html</loc></url>
 <url><loc>/articles/module-cor-coxph.html</loc></url>
 <url><loc>/articles/module-cor-graphical.html</loc></url>
 <url><loc>/articles/module-cor-logistic.html</loc></url>
 <url><loc>/articles/module-cor-nonlinear.html</loc></url>
+<url><loc>/articles/module-cor-npthreshold.html</loc></url>
 <url><loc>/articles/module-cor-poisson.html</loc></url>
 <url><loc>/articles/module-cor-surrogates.html</loc></url>
 <url><loc>/articles/module-cor-tabular.html</loc></url>
 <url><loc>/articles/module-cor-threshold.html</loc></url>
+<url><loc>/articles/module-immuno-cumulative-incidence.html</loc></url>
 <url><loc>/articles/module-immuno-graphical.html</loc></url>
 <url><loc>/articles/module-immuno-tabular.html</loc></url>
 <url><loc>/articles/os-compatibility.html</loc></url>
