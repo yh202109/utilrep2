@@ -165,7 +165,7 @@ structured <code>os_check_result</code> object. Calling
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">utilrep2</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
 <pre><code>----------------------------------------------------------------------
   OS Compatibility Report
@@ -202,7 +202,7 @@ issue — convenient for filtering or exporting to a spreadsheet:</p>
 default exclusion list skips <code>renv/</code>, <code>tests/</code>,
 <code>win/</code>, and <code>os_check/</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">hits</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_code_patterns.html">check_code_patterns</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">hits</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_code_patterns.html">check_code_patterns</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">hits</span></span></code></pre></div>
 <p>The returned data frame has columns <code>file</code>,
 <code>id</code>, <code>pattern</code>, <code>description</code>,
@@ -212,7 +212,7 @@ default exclusion list skips <code>renv/</code>, <code>tests/</code>,
 </h3>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hits</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_code_patterns.html">check_code_patterns</a></span><span class="op">(</span></span>
-<span>  root         <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  root         <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  exclude_dirs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"renv"</span>, <span class="st">"tests"</span>, <span class="st">"win"</span>, <span class="st">"archive"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>You can also pass <code>exclude_dirs</code> directly through
@@ -220,7 +220,7 @@ default exclusion list skips <code>renv/</code>, <code>tests/</code>,
 calling <code><a href="../reference/check_code_patterns.html">check_code_patterns()</a></code> separately:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span></span>
-<span>  root         <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  root         <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  exclude_dirs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"renv"</span>, <span class="st">"tests"</span>, <span class="st">"win"</span>, <span class="st">"archive"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -248,10 +248,10 @@ You can extend or replace it:</p>
 <span><span class="va">my_patterns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="fu"><a href="../reference/unix_patterns.html">unix_patterns</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">extra</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Pass directly to check_code_patterns()</span></span>
-<span><span class="fu"><a href="../reference/check_code_patterns.html">check_code_patterns</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span>, patterns <span class="op">=</span> <span class="va">my_patterns</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/check_code_patterns.html">check_code_patterns</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>, patterns <span class="op">=</span> <span class="va">my_patterns</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Or pass through the wrapper via ...</span></span>
-<span><span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span>, patterns <span class="op">=</span> <span class="va">my_patterns</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>, patterns <span class="op">=</span> <span class="va">my_patterns</span><span class="op">)</span></span></code></pre></div>
 <hr>
 </div>
 </div>
@@ -292,7 +292,7 @@ queries CRAN for three potential problems:</p>
 </table>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pkg_issues</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_renv_packages.html">check_renv_packages</a></span><span class="op">(</span></span>
-<span>  lock_path   <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="st">"renv.lock"</span><span class="op">)</span>,</span>
+<span>  lock_path   <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"renv.lock"</span><span class="op">)</span>,</span>
 <span>  cran_mirror <span class="op">=</span> <span class="st">"https://cran.rstudio.com/"</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -315,7 +315,7 @@ frames.</p>
 (no network required):</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span></span>
-<span>  root           <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  root           <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  check_packages <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
@@ -326,7 +326,7 @@ frames.</p>
 elsewhere, pass <code>lock_path</code> explicitly:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span></span>
-<span>  root      <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  root      <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  lock_path <span class="op">=</span> <span class="st">"/shared/project/renv.lock"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <hr>
@@ -369,7 +369,7 @@ silently degrade</td>
 <li>
 <p>Run the full audit once before porting to Windows:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_os_compatibility.html">check_os_compatibility</a></span><span class="op">(</span>root <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></code></pre></div>
 </li>
 <li>

@@ -200,7 +200,7 @@ before any <code>run_*()</code> function will execute:</p>
 <tr class="even">
 <td><code>report_root</code></td>
 <td align="center">no</td>
-<td>Project root (default: <code>here::here()</code>)</td>
+<td>Project root (default: <code><a href="https://here.r-lib.org/reference/here.html" class="external-link">here::here()</a></code>)</td>
 </tr>
 <tr class="odd">
 <td><code>win_root</code></td>
@@ -340,7 +340,7 @@ provided):</p>
 <div class="section level3">
 <h3 id="report-root-optional">Report root (optional)<a class="anchor" aria-label="anchor" href="#report-root-optional"></a>
 </h3>
-<p>By default, module paths are resolved from <code>here::here()</code>.
+<p>By default, module paths are resolved from <code><a href="https://here.r-lib.org/reference/here.html" class="external-link">here::here()</a></code>.
 Override when running from a different working directory, a Slurm job,
 or a network drive:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
@@ -354,15 +354,15 @@ or a network drive:</p>
 </h3>
 <p>When <code>platform = "win"</code>, scripts are looked up under
 <code>&lt;report_root&gt;/win/</code> by default. Use
-<code>set_win_root()</code> (or the <code>win_root</code> argument in
+<code><a href="../reference/set_win_root.html">set_win_root()</a></code> (or the <code>win_root</code> argument in
 <code><a href="../reference/setup_session.html">setup_session()</a></code>) to point to a different location — for
 example when the <code>win/</code> tree lives on a separate drive or a
 shared network path:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">set_win_root</span><span class="op">(</span><span class="st">"D:/correlates_reporting2/win"</span><span class="op">)</span></span>
-<span><span class="fu">get_win_root</span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/set_win_root.html">set_win_root</a></span><span class="op">(</span><span class="st">"D:/correlates_reporting2/win"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/get_win_root.html">get_win_root</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">set_win_root</span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span>   <span class="co"># revert to default (&lt;report_root&gt;/win)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/set_win_root.html">set_win_root</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span>   <span class="co"># revert to default (&lt;report_root&gt;/win)</span></span></code></pre></div>
 <p>If a win-specific script is not found under <code>win_root</code>,
 the package falls back to the original module script automatically and
 emits an informational message.</p>

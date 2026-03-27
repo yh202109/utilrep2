@@ -36,11 +36,13 @@
 <url><loc>/reference/get_output_root.html</loc></url>
 <url><loc>/reference/get_platform.html</loc></url>
 <url><loc>/reference/get_report_root.html</loc></url>
+<url><loc>/reference/get_win_root.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
 <url><loc>/reference/module_output_dir.html</loc></url>
 <url><loc>/reference/print.os_check_result.html</loc></url>
 <url><loc>/reference/run_cop_analysis.html</loc></url>
 <url><loc>/reference/run_cop_binaryprinstrat.html</loc></url>
+<url><loc>/reference/run_cop_contrisk.html</loc></url>
 <url><loc>/reference/run_cop_mediation.html</loc></url>
 <url><loc>/reference/run_cop_report.html</loc></url>
 <url><loc>/reference/run_cop_stochastic.html</loc></url>
@@ -65,6 +67,7 @@
 <url><loc>/reference/set_output_root.html</loc></url>
 <url><loc>/reference/set_platform.html</loc></url>
 <url><loc>/reference/set_report_root.html</loc></url>
+<url><loc>/reference/set_win_root.html</loc></url>
 <url><loc>/reference/setup_session.html</loc></url>
 <url><loc>/reference/style_all.html</loc></url>
 <url><loc>/reference/style_module.html</loc></url>

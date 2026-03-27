@@ -127,6 +127,7 @@ execute.</p>
 <span>  platform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  data_path <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  report_root <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  win_root <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  output_root <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -156,6 +157,13 @@ Absolute path to the directory containing analysis-ready data files
 <dt id="arg-report-root">report_root<a class="anchor" aria-label="anchor" href="#arg-report-root"></a></dt>
 <dd><p>Character. Absolute path to the project root containing
 the module directories.  See <code><a href="set_report_root.html">set_report_root</a></code>.</p></dd>
+
+
+<dt id="arg-win-root">win_root<a class="anchor" aria-label="anchor" href="#arg-win-root"></a></dt>
+<dd><p>Character. Absolute path to the root of the
+Windows-compatible script tree (the directory that contains per-module
+subdirectories such as <code>cor_coxph/code/</code>).  Defaults to
+<code>&lt;report_root&gt;/win</code>.  See <code><a href="set_win_root.html">set_win_root</a></code>.</p></dd>
 
 
 <dt id="arg-output-root">output_root<a class="anchor" aria-label="anchor" href="#arg-output-root"></a></dt>
@@ -194,12 +202,13 @@ at any time.</p>
 <span class="r-in"><span>  output_root <span class="op">=</span> <span class="st">"/results/correlates/2026-03-04"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Windows machine</span></span></span>
+<span class="r-in"><span><span class="co"># Windows machine with win/ scripts on a separate drive</span></span></span>
 <span class="r-in"><span><span class="fu">setup_session</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  trial       <span class="op">=</span> <span class="st">"moderna_mock"</span>,</span></span>
 <span class="r-in"><span>  platform    <span class="op">=</span> <span class="st">"win"</span>,</span></span>
 <span class="r-in"><span>  data_path   <span class="op">=</span> <span class="st">"C:/data/correlates_reporting2/data_clean"</span>,</span></span>
-<span class="r-in"><span>  report_root <span class="op">=</span> <span class="st">"C:/projects/correlates_reporting2"</span></span></span>
+<span class="r-in"><span>  report_root <span class="op">=</span> <span class="st">"C:/projects/correlates_reporting2"</span>,</span></span>
+<span class="r-in"><span>  win_root    <span class="op">=</span> <span class="st">"D:/win_scripts"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Restore previous settings on exit</span></span></span>

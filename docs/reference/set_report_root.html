@@ -117,7 +117,7 @@ directory, a Slurm job, or a network drive."><!-- mathjax --><script src="https:
     <div class="ref-description">
     <p>All <code>run_*()</code> and <code><a href="clean_module.html">clean_module()</a></code> functions resolve module
 directories relative to a root path.  By default this root is
-<code>here::here()</code> (or <code><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd()</a></code> if <span class="pkg">here</span> is unavailable), which
+<code><a href="https://here.r-lib.org/reference/here.html" class="external-link">here::here()</a></code> (or <code><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd()</a></code> if <span class="pkg">here</span> is unavailable), which
 works when you are running inside the project.  Use <code>set_report_root()</code>
 to override it – for example when running from a different working
 directory, a Slurm job, or a network drive.</p>
